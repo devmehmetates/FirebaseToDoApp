@@ -50,12 +50,15 @@ struct HomeView: View {
                 .navigationTitle("To Do List")
             }
             Button {
+                self.show.toggle()
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
                     .padding(.all)
                     .padding(.trailing ,25)
+            }.sheet(isPresented: self.$show) {
+                AddItemView(isShow: self.$show)
             }
         }
        

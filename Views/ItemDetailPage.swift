@@ -21,7 +21,7 @@ struct ItemDetailPage: View {
             .frame(width: 150, height: 150)
             .clipShape(Circle())
             .shadow(radius: 7)
-            .overlay(Circle().stroke(colorScheme == .dark ? .white : .black,lineWidth: 2))
+            .overlay(Circle().stroke(ticketColors[self.object.ticket],lineWidth: 2))
             
             Text(self.object.title)
                 .font(.largeTitle)
